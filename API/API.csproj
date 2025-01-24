@@ -1,0 +1,51 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <!-- تحديد نوع المشروع (مكتبة Class Library) -->
+        <OutputType>Library</OutputType>
+        <TargetFramework>net48</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <Version>1.0.0</Version>
+        <AssemblyName>سست.API</AssemblyName>
+        <RootNamespace>سست.API</RootNamespace>
+        <DebugType>full</DebugType>
+        <Optimize>true</Optimize>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- إضافة التبعيات الداخلية (مثل Config و Loader) -->
+        <ProjectReference Include="..\Config\Config.csproj" />
+        <ProjectReference Include="..\Loader\Loader.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- إضافة حزم NuGet إذا لزم الأمر -->
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="YamlDotNet" Version="12.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- تضمين ملفات معينة في المشروع -->
+        <Compile Include="IAPI.cs" />
+        <Compile Include="API.cs" />
+        <Compile Include="ItemAPI.cs" />
+        <Compile Include="MainProgram.cs" />
+        <Compile Include="ModelAPI.cs" />
+        <Compile Include="PlayerAPI.cs" />
+        <Compile Include="PlayerManager.cs" />
+        <Compile Include="RoleAPI.cs" />
+        <Compile Include="RoomAPI.cs" />
+        <Compile Include="SCPAPI.cs" />
+
+
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- تجاهل ملفات معينة -->
+        <None Remove="bin\**\*" />
+        <None Remove="obj\**\*" />
+    </ItemGroup>
+
+</Project>
