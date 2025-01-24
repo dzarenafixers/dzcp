@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{F24C92FE-DA4B-4AD7-B785-BC51D0A0FC35}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>سست</RootNamespace>
+        <AssemblyName>سست</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>..\..\..\..\Videos\14.0.2\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+          <HintPath>..\..\..\..\Videos\14.0.2\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+          <HintPath>..\..\..\..\Videos\14.0.2\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mirror.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Mdb">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Mdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Pdb">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Pdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Rocks">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Rocks.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Posix">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Posix.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Security">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="System"/>
+        <Reference Include="System.ComponentModel.Composition" />
+        <Reference Include="System.Core"/>
+        <Reference Include="System.Data"/>
+        <Reference Include="System.IO, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.IO.4.3.0\lib\net462\System.IO.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Compression.FileSystem" />
+        <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http, Version=4.1.1.3, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Net.Http.4.3.4\lib\net46\System.Net.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime, Version=4.1.1.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.4.3.1\lib\net462\System.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Algorithms, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.1\lib\net463\System.Security.Cryptography.Algorithms.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.2, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.2\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="API\API.cs" />
+        <Compile Include="API\IAPI.cs" />
+        <Compile Include="API\ItemAPI.cs" />
+        <Compile Include="API\MainProgram.cs" />
+        <Compile Include="API\ModelAPI.cs" />
+        <Compile Include="API\PlayerAPI.cs" />
+        <Compile Include="API\PlayerManager.cs" />
+        <Compile Include="API\RoleAPI.cs" />
+        <Compile Include="API\RoomAPI.cs" />
+        <Compile Include="API\SCPAPI.cs" />
+        <Compile Include="Commands\Command.cs" />
+        <Compile Include="Commands\ItemCommand.cs" />
+        <Compile Include="Commands\RoleCommand.cs" />
+        <Compile Include="Commands\RoomCommand.cs" />
+        <Compile Include="Commands\UserInterface.cs" />
+        <Compile Include="Core\Event\Cassie\CassieEvents.cs" />
+        <Compile Include="Core\Event\Entities\Creature.cs" />
+        <Compile Include="Core\Event\Entities\Player.cs" />
+        <Compile Include="Core\Event\Entities\Role.cs" />
+        <Compile Include="Core\Event\EventManager.cs" />
+        <Compile Include="Core\Event\Game\RoundEvents.cs" />
+        <Compile Include="Core\Event\Game\ServerEvents.cs" />
+        <Compile Include="Core\Event\Game\TeamEvents.cs" />
+        <Compile Include="Core\Event\Interfaces\EventManager.cs" />
+        <Compile Include="Core\Event\Interfaces\IEvent.cs" />
+        <Compile Include="Loader\Config.cs" />
+        <Compile Include="Loader\Features\LoaderMessages.cs" />
+        <Compile Include="Loader\Features\MultiAdmin.cs" />
+        <Compile Include="Loader\Paths.cs" />
+        <Compile Include="Logging\Logger.cs" />
+        <Compile Include="Plugins\ExplosiveArmorPlugin.cs" />
+        <Compile Include="Plugins\RolePlugin.cs" />
+        <Compile Include="Plugins\RoomPlugin.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Commands\CommandManager.cs" />
+        <Compile Include="Commands\ExampleCommand.cs" />
+        <Compile Include="Core\DZCPCore.cs" />
+        <Compile Include="Core\PluginManager.cs" />
+        <Compile Include="Loader\PluginLoader.cs" />
+        <Compile Include="Plugins\ExamplePlugin.cs" />
+        <Compile Include="programs\Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Zones\Zone.cs" />
+        <Compile Include="Zones\ZoneManager.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".github\workflows\build.yml" />
+      <Content Include="API\API.csproj" />
+      <Content Include="Commands\Commands.csproj" />
+      <Content Include="Core\core.csproj" />
+      <Content Include="git\.gitignore" />
+      <Content Include="git\gitignore.sln" />
+      <Content Include="LICENSE\README.md" />
+      <Content Include="Loader\Loader.csproj" />
+      <Content Include="README.md" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
