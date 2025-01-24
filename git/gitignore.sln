@@ -1,0 +1,14 @@
+﻿# انتقل إلى الفرع الرئيسي
+git checkout main
+
+# دمج فرع Loader
+git merge feature/loader
+
+# دمج فرع Plugins
+git merge feature/plugins
+
+# دمج فرع Config
+git merge feature/config
+
+# رفع التغييرات إلى Remote
+git push origin main
