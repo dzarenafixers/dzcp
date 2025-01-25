@@ -1,6 +1,7 @@
 ﻿using DZCP.API;
 using DZCP.Logging;
 using سست.API;
+using سست.Commands;
 
 namespace DZCP.Commands
 {

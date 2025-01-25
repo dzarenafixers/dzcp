@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace DZCP.Commands
+﻿namespace سست.Commands
 {
     public abstract class Command
     {
