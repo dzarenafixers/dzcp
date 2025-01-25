@@ -19,7 +19,7 @@ namespace DZCP.Loader
                 return;
             }
 
-            var pluginFiles = Directory.GetFiles(pluginsPath, "*.dll");
+            string[] pluginFiles = Directory.GetFiles(pluginsPath , "*.dll");
             foreach (var file in pluginFiles)
             {
                 try
@@ -33,7 +33,8 @@ namespace DZCP.Loader
                         var plugin = Activator.CreateInstance(type) as IDZCPPlugin;
                         if (plugin != null)
                         {
-                            PluginManager.RegisterPlugin(plugin);
+                            PluginManager.LoadPlugin(  default);
+                            IDZCPPlugin dzcpPlugin = (plugin);
                             Logger.Info("PluginLoader", $"Loaded plugin: {type.Name} from {file}");
                         }
                     }
@@ -47,7 +48,7 @@ namespace DZCP.Loader
 
         public static void UnloadPlugins()
         {
-            PluginManager.UnregisterPlugins();
+            PluginManager.GetDZCPBuild() ;
         }
     }
 }

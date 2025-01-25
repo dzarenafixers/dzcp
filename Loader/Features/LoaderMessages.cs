@@ -1,7 +1,7 @@
 ﻿using System;
-using DZCP.Core;
+using PluginManager = DZCP.PluginManager;
 
-namespace DZCP.Loader
+namespace سست.Loader.Features
 {
     public static partial class LoaderMessages
     {
@@ -14,7 +14,7 @@ namespace DZCP.Loader
             @"██████╔╝███████╗╚██████╗██║",
             @"╚═════╝ ╚══════╝ ╚═════╝╚═╝",
             "DayZ Combat Plugin Framework",
-            $"Version: {PluginManager.Version}",
+            $"Version: {PluginManager.DZCP_BUILD}",
             "Created by MONCEF50G",
             "Loading..."
         });
@@ -28,7 +28,7 @@ namespace DZCP.Loader
             @"███████║██║     ██║  ██║██║ ╚═╝ ██║██║  ██║██║ ╚████║",
             @"╚══════╝╚═╝     ╚═╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝",
             "Special Edition",
-            $"Version: {PluginManager.Version}",
+            $"Version: {PluginManager.DZCP_BUILD}",
             "Created by MONCEF50G",
             "Loading..."
         });
