@@ -1,25 +1,37 @@
 ﻿using System;
-using DZCP.Core;
 
-namespace DZCP.Plugins
+namespace سست.Plugins
 {
-    public class ExamplePlugin : IDZCPPlugin
+    /// <summary>
+    /// A simple example plugin for DZCP.
+    /// </summary>
+    public class ExamplePlugin
     {
+        /// <summary>
+        /// Called when the plugin is enabled.
+        /// </summary>
         public void OnEnabled()
         {
-            Console.WriteLine("Example Plugin Enabled!");
-            EventManager.OnPlayerJoin += OnPlayerJoin;
+            Console.WriteLine("ExamplePlugin has been enabled!");
+
+            // Simulate waiting for players
+            OnWaitingForPlayers();
         }
 
+        /// <summary>
+        /// Called when the plugin is disabled.
+        /// </summary>
         public void OnDisabled()
         {
-            Console.WriteLine("Example Plugin Disabled!");
-            EventManager.OnPlayerJoin -= OnPlayerJoin;
+            Console.WriteLine("ExamplePlugin has been disabled!");
         }
 
-        private void OnPlayerJoin(string playerName)
+        /// <summary>
+        /// Called when the server is waiting for players.
+        /// </summary>
+        private void OnWaitingForPlayers()
         {
-            Console.WriteLine($"{playerName} joined the game!");
+            Console.WriteLine("Server is waiting for players...");
         }
     }
 }

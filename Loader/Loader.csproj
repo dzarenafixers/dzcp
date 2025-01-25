@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <!-- تحديد نوع المشروع (مكتبة Class Library) -->
+        <OutputType>Library</OutputType>
+        <TargetFramework>net48</TargetFramework> <!-- أو net7.0 أو net8.0 -->
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile> <!-- إنشاء ملف توثيق XML -->
+        <Version>1.0.0</Version> <!-- إصدار المشروع -->
+    </PropertyGroup>
+
+    <ItemGroup>
+        <!-- إضافة التبعيات (مثل Config) -->
+        <ProjectReference Include="..\Config\Config.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- إضافة حزم NuGet إذا لزم الأمر -->
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="YamlDotNet" Version="12.3.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- تضمين ملفات معينة في المشروع -->
+        <Compile Include="PathExtensions.cs" />
+        <Compile Include="Loader.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <!-- تجاهل ملفات معينة -->
+        <None Remove="bin\**\*" />
+        <None Remove="obj\**\*" />
+    </ItemGroup>
+
+</Project>
