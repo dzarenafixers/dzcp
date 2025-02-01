@@ -1,0 +1,14 @@
+﻿{
+  "maps": [
+    {
+      "name": "Map1",
+      "size": "Large",
+      "description": "Main game map"
+    },
+    {
+      "name": "Map2",
+      "size": "Small",
+      "description": "Training map"
+    }
+  ]
+}

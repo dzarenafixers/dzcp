@@ -1,0 +1,41 @@
+﻿{
+  "items": [
+    {
+      "name": "Pistol",
+      "type": "Weapon",
+      "attributes": {
+        "damage": 25,
+        "range": 50
+      }
+    },
+    {
+      "name": "Rifle",
+      "type": "Weapon",
+      "attributes": {
+        "damage": 50,
+        "range": 100
+      }
+    },
+    {
+      "name": "Medkit",
+      "type": "Tool",
+      "attributes": {
+        "healing": 50
+      }
+    },
+    {
+      "name": "Keycard",
+      "type": "Tool",
+      "attributes": {
+        "level": 3
+      }
+    },
+    {
+      "name": "Document",
+      "type": "Misc",
+      "attributes": {
+        "pages": 5
+      }
+    }
+  ]
+}

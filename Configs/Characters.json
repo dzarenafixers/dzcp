@@ -1,0 +1,14 @@
+﻿{
+  "characters": [
+    {
+      "name": "Character1",
+      "health": 100,
+      "role": "Exiled"
+    },
+    {
+      "name": "Character2",
+      "health": 150,
+      "role": "OtherRole"
+    }
+  ]
+}
