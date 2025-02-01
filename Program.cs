@@ -1,33 +1,35 @@
 ﻿using System;
-using DZCP.Commands;
-using DZCP.Core;
-using سست.Core;
+using System.Threading;
 
-namespace DZCP
+namespace PluginFramework
 {
     public class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            var core = new DzcpCore();
-            core.Start();
+            ConsoleBanner.Show();
+            Console.WriteLine("[PluginFramework] بدء تشغيل محمل الإضافات...");
 
-            // تسجيل الأوامر
-            CommandManager.RegisterCommand(new ExampleCommand());
-            CommandManager.RegisterCommand(new RoleCommand());
-            CommandManager.RegisterCommand(new RoomCommand());
-            CommandManager.RegisterCommand(new ItemCommand());
+            var pluginLoader = new PluginLoader();
+            var commandManager = new CommandManager();
 
-            Console.WriteLine("Type 'help' for a list of commands.");
+            // تسجيل أمر الاختبار
+            var testCommand = new ExamplePlugin.ExampleCommand();
+            commandManager.RegisterCommand(testCommand);
+
+ 
+            // تشغيل وضع الأوامر
             while (true)
             {
-                var input = Console.ReadLine();
-                if (input == "stop")
+                Console.Write("> ");
+                string input = Console.ReadLine();
+                if (input == "reload")
                 {
-                    core.Stop();
-                    break;
+                 }
+                else
+                {
+                    commandManager.ExecuteCommand(input);
                 }
-                CommandManager.ExecuteCommand(input);
             }
         }
     }
