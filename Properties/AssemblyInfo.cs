@@ -4,11 +4,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("سست")]
+[assembly: AssemblyTitle("SCPSL_Framework")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("سست")]
+[assembly: AssemblyProduct("SCPSL_Framework")]
 [assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +19,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("F24C92FE-DA4B-4AD7-B785-BC51D0A0FC35")]
+[assembly: Guid("A350A4E1-0BF2-4125-B83E-660AC0AEBE69")]
 
 // Version information for an assembly consists of the following four values:
 //
