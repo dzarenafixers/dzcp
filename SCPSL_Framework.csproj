@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+            Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')"/>
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{A350A4E1-0BF2-4125-B83E-660AC0AEBE69}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>SCPSL_Framework</RootNamespace>
+        <AssemblyName>SCPSL_Framework</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+        <LangVersion>latest</LangVersion>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="0Harmony">
+          <HintPath>..\..\..\..\Videos\14.0.2\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\Lib.Harmony.2.3.3\lib\net48\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp">
+          <HintPath>..\..\..\..\Videos\14.0.2\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="Assembly-CSharp-firstpass">
+          <HintPath>..\..\..\..\Videos\14.0.2\Assembly-CSharp-firstpass.dll</HintPath>
+        </Reference>
+        <Reference Include="BouncyCastle.Cryptography">
+          <HintPath>..\..\..\..\Videos\14.0.2\BouncyCastle.Cryptography.dll</HintPath>
+        </Reference>
+        <Reference Include="Caress">
+          <HintPath>..\..\..\..\Videos\14.0.2\Caress.dll</HintPath>
+        </Reference>
+        <Reference Include="CommandSystem.Core">
+          <HintPath>..\..\..\..\Videos\14.0.2\CommandSystem.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="DnsClient">
+          <HintPath>..\..\..\..\Videos\14.0.2\DnsClient.dll</HintPath>
+        </Reference>
+        <Reference Include="Facepunch.Steamworks.Win64">
+          <HintPath>..\..\..\..\Videos\14.0.2\Facepunch.Steamworks.Win64.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AspNetCore.Http.Abstractions, Version=2.3.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.AspNetCore.Http.Abstractions.2.3.0\lib\netstandard2.0\Microsoft.AspNetCore.Http.Abstractions.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.AspNetCore.Http.Features, Version=5.0.17.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.AspNetCore.Http.Features.5.0.17\lib\net461\Microsoft.AspNetCore.Http.Features.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Extensions.Primitives, Version=9.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Extensions.Primitives.9.0.1\lib\net462\Microsoft.Extensions.Primitives.dll</HintPath>
+        </Reference>
+        <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mirror.dll</HintPath>
+        </Reference>
+        <Reference Include="Mirror.Components">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mirror.Components.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Mdb">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Mdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Pdb">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Pdb.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Cecil.Rocks">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Cecil.Rocks.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Posix">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Posix.dll</HintPath>
+        </Reference>
+        <Reference Include="Mono.Security">
+          <HintPath>..\..\..\..\Videos\14.0.2\Mono.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="mscorlib" />
+        <Reference Include="MvcRouteTester, Version=1.0.1.1, Culture=neutral, processorArchitecture=MSIL">
+          <HintPath>..\packages\MvcRouteTester.Mvc5.1.2.1\lib\net45\MvcRouteTester.dll</HintPath>
+        </Reference>
+        <Reference Include="netstandard">
+          <HintPath>..\..\..\..\Videos\14.0.2\netstandard.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="Newtonsoft.Json.Bson, Version=1.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+          <HintPath>..\packages\Newtonsoft.Json.Bson.1.0.3\lib\net45\Newtonsoft.Json.Bson.dll</HintPath>
+        </Reference>
+        <Reference Include="Ninject, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\packages\Ninject.4.0.0-beta.1\lib\net46\Ninject.dll</HintPath>
+        </Reference>
+        <Reference Include="Ninject.Web.Common, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\packages\Ninject.Web.Common.3.3.2\lib\net45\Ninject.Web.Common.dll</HintPath>
+        </Reference>
+        <Reference Include="Ninject.Web.Common.WebHost, Version=3.3.2.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+          <HintPath>..\packages\Ninject.Web.Common.WebHost.3.3.2\lib\net45\Ninject.Web.Common.WebHost.dll</HintPath>
+        </Reference>
+        <Reference Include="NorthwoodLib">
+          <HintPath>..\..\..\..\Videos\14.0.2\NorthwoodLib.dll</HintPath>
+        </Reference>
+        <Reference Include="PluginAPI">
+          <HintPath>..\..\..\..\Videos\14.0.2\PluginAPI.dll</HintPath>
+        </Reference>
+        <Reference Include="PluginLoader">
+          <HintPath>..\..\PluginLoader\PluginLoader\obj\Debug\PluginLoader.dll</HintPath>
+        </Reference>
+        <Reference Include="Pooling">
+          <HintPath>..\..\..\..\Videos\14.0.2\Pooling.dll</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Buffers, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Buffers.4.6.0\lib\net462\System.Buffers.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.Composition">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.ComponentModel.Composition.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ComponentModel.DataAnnotations">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.ComponentModel.DataAnnotations.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Configuration">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Configuration.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Data.DataSetExtensions">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Data.DataSetExtensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Drawing">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Drawing.dll</HintPath>
+        </Reference>
+        <Reference Include="System.EnterpriseServices">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.EnterpriseServices.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Compression">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.IO.Compression.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Compression.FileSystem">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.IO.Compression.FileSystem.dll</HintPath>
+        </Reference>
+        <Reference Include="System.IO.Pipelines, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.IO.Pipelines.9.0.1\lib\net462\System.IO.Pipelines.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Memory, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Memory.4.6.0\lib\net462\System.Memory.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Net.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Net.Http.Formatting, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.6.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Numerics" />
+        <Reference Include="System.Numerics.Vectors, Version=4.1.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Numerics.Vectors.4.6.0\lib\net462\System.Numerics.Vectors.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.0\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Runtime.Serialization">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Runtime.Serialization.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Security">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Security.dll</HintPath>
+        </Reference>
+        <Reference Include="System.ServiceModel.Internals">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.ServiceModel.Internals.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Text.Encodings.Web, Version=9.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Text.Encodings.Web.9.0.1\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+          <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.0\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Transactions">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Transactions.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web" />
+        <Reference Include="System.Web.Http, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.3.0\lib\net45\System.Web.Http.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Web.Http.WebHost, Version=5.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+          <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.3.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+        </Reference>
+        <Reference Include="System.Xml" />
+        <Reference Include="System.Xml.Linq">
+          <HintPath>..\..\..\..\Videos\14.0.2\System.Xml.Linq.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Burst">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.Burst.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Burst.Unsafe">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.Burst.Unsafe.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Mathematics">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.Mathematics.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ProBuilder">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.ProBuilder.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ProBuilder.Csg">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.ProBuilder.Csg.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ProBuilder.KdTree">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.ProBuilder.KdTree.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ProBuilder.Poly2Tri">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.ProBuilder.Poly2Tri.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.ProBuilder.Stl">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.ProBuilder.Stl.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.Core.Runtime">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.TextMeshPro">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.TextMeshPro.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.Timeline">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.Timeline.dll</HintPath>
+        </Reference>
+        <Reference Include="Unity.VisualEffectGraph.Runtime">
+          <HintPath>..\..\..\..\Videos\14.0.2\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AccessibilityModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AccessibilityModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AIModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AndroidJNIModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AndroidJNIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AnimationModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AnimationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ARModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ARModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AssetBundleModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.AudioModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.AudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClothModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ClothModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterInputModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ClusterInputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ClusterRendererModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ClusterRendererModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CrashReportingModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.CrashReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DirectorModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.DirectorModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.DSPGraphModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.DSPGraphModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GameCenterModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.GameCenterModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GIModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.GIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.GridModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.GridModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.HotReloadModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.HotReloadModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ImageConversionModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ImageConversionModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputLegacyModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.InputLegacyModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.InputModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.InputModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.JSONSerializeModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.JSONSerializeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.LocalizationModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.LocalizationModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.NVIDIAModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.NVIDIAModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ParticleSystemModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ParticleSystemModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PerformanceReportingModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.PerformanceReportingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.Physics2DModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.Physics2DModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.PhysicsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.PhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ProfilerModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ProfilerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.ScreenCaptureModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.ScreenCaptureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SharedInternalsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.SharedInternalsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteMaskModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.SpriteMaskModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SpriteShapeModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.SpriteShapeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.StreamingModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.StreamingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubstanceModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.SubstanceModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.SubsystemsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.SubsystemsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TerrainModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TerrainPhysicsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreFontEngineModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextCoreTextEngineModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TilemapModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TilemapModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TLSModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.TLSModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UIElementsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIElementsNativeModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UIElementsNativeModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UIModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UIModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UmbraModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UmbraModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UNETModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UNETModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityAnalyticsModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityConnectModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityConnectModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityCurlModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityCurlModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityTestProtocolModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityWebRequestModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VehiclesModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.VehiclesModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VFXModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.VFXModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VideoModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.VideoModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VirtualTexturingModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.VirtualTexturingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.VRModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.VRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.WindModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.WindModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.XRModule">
+          <HintPath>..\..\..\..\Videos\14.0.2\UnityEngine.XRModule.dll</HintPath>
+        </Reference>
+        <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+          <HintPath>..\packages\WebActivatorEx.2.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+        </Reference>
+        <Reference Include="YamlDotNet">
+          <HintPath>..\..\..\..\Videos\14.0.2\YamlDotNet.dll</HintPath>
+        </Reference>
+        <Reference Include="zxing">
+          <HintPath>..\..\..\..\Videos\14.0.2\zxing.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="Assets\Characters\Humans\ClassD.cs" />
+        <Compile Include="Assets\Characters\Humans\Guard.cs" />
+        <Compile Include="Assets\Characters\Humans\MTF.cs" />
+        <Compile Include="Assets\Characters\Humans\Scientist.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP049.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP079.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP096.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP106.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP173.cs" />
+        <Compile Include="Assets\Characters\SCPs\SCP999.cs" />
+        <Compile Include="Assets\Items\A7.cs" />
+        <Compile Include="Assets\Items\Adrenaline.cs" />
+        <Compile Include="Assets\Items\AK.cs" />
+        <Compile Include="Assets\Items\Ammo.cs" />
+        <Compile Include="Assets\Items\Coin.cs" />
+        <Compile Include="Assets\Items\COM15.cs" />
+        <Compile Include="Assets\Items\COM18.cs" />
+        <Compile Include="Assets\Items\COM45.cs" />
+        <Compile Include="Assets\Items\Crossvec.cs" />
+        <Compile Include="Assets\Items\Disarmer.cs" />
+        <Compile Include="Assets\Items\First Aid Kit.cs" />
+        <Compile Include="Assets\Items\Flashbang Grenade.cs" />
+        <Compile Include="Assets\Items\Flashlight.cs" />
+        <Compile Include="Assets\Items\Fragmentation Grenade.cs" />
+        <Compile Include="Assets\Items\FRMG0.cs" />
+        <Compile Include="Assets\Items\FSP9.cs" />
+        <Compile Include="Assets\Items\Grenades\Grenades.cs" />
+        <Compile Include="Assets\Items\Keycards.cs" />
+        <Compile Include="Assets\Items\Meds\Meds.cs" />
+        <Compile Include="Assets\Items\Micro H.I.D..cs" />
+        <Compile Include="Assets\Items\Misc\MiscItem.cs" />
+        <Compile Include="Assets\Items\MTF-E11-SR.cs" />
+        <Compile Include="Assets\Items\Painkillers.cs" />
+        <Compile Include="Assets\Items\Radio.cs" />
+        <Compile Include="Assets\Items\SCP-018.cs" />
+        <Compile Include="Assets\Items\SCP-207.cs" />
+        <Compile Include="Assets\Items\SCP-268.cs" />
+        <Compile Include="Assets\Items\SCP-500.cs" />
+        <Compile Include="Assets\Items\SCPItem\SCPItem.cs" />
+        <Compile Include="Assets\Items\Tools\Tools.cs" />
+        <Compile Include="Assets\Items\Weapon\Weapon.cs" />
+        <Compile Include="ConsoleBanner\ConsoleBanner.cs" />
+        <Compile Include="Documentation\Examples\EventUsageExample.cs" />
+        <Compile Include="Documentation\Examples\ExamplePlugin.cs" />
+        <Compile Include="Documentation\Examples\ExampleUsage.cs" />
+        <Compile Include="Documentation\Examples\RoleUsageExample.cs" />
+        <Compile Include="Documentation\Examples\WeaponUsageExample.cs" />
+        <Compile Include="Event System\EventManager.cs" />
+        <Compile Include="Event System\ExampleEventListener.cs" />
+        <Compile Include="Event System\IEventListener.cs" />
+        <Compile Include="ExamplePluginConfig.cs" />
+        <Compile Include="File Manager\FileManager.cs" />
+        <Compile Include="IPlugin\CommandManager.cs" />
+        <Compile Include="IPlugin\ExampleCommand.cs" />
+        <Compile Include="IPlugin\ICommand.cs" />
+        <Compile Include="IPlugin\IPlugin.cs" />
+        <Compile Include="Logger System\Logger.cs" />
+        <Compile Include="Main.cs" />
+        <Compile Include="Patching\SpeedPatch.cs" />
+        <Compile Include="PluginConfig.cs" />
+        <Compile Include="Program.cs" />
+        <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="Scripts\Core\PluginLoadedListener.cs" />
+        <Compile Include="Scripts\Core\PluginLoader.cs" />
+        <Compile Include="Scripts\Core\Loader.cs" />
+        <Compile Include="Scripts\Core\Version.cs" />
+        <Compile Include="Scripts\Events\EventManager.cs" />
+        <Compile Include="Scripts\Events\SpecificEvents\PlayerJoinedEvent.cs" />
+        <Compile Include="Scripts\Events\SpecificEvents\PlayerLeftEvent.cs" />
+        <Compile Include="Scripts\GameRoles\HumanRole.cs" />
+        <Compile Include="Scripts\GameRoles\SCPRole.cs" />
+        <Compile Include="Scripts\Managers\ItemManager.cs" />
+        <Compile Include="Scripts\Managers\MiscItem.cs" />
+        <Compile Include="Scripts\Managers\Tool.cs" />
+        <Compile Include="Scripts\Utilities\ConfigManager.cs" />
+        <Compile Include="Scripts\Utilities\FileHelper.cs" />
+        <Compile Include="Scripts\Utilities\Logger.cs" />
+        <Compile Include="Scripts\Utilities\Validator.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Assets\Maps\" />
+      <Folder Include="Assets\Plugins\" />
+      <Folder Include="Builds\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include="Configs\Characters.json" />
+      <Content Include="Configs\Items.json" />
+      <Content Include="Configs\Maps.json" />
+      <Content Include="Configs\Plugins.json" />
+      <Content Include="Documentation\API_Reference.md" />
+      <Content Include="Documentation\Examples\ExampleUsage.md" />
+      <Content Include="Documentation\Examples\ItemUsageExample.md" />
+      <Content Include="Documentation\Getting_Started.md" />
+      <Content Include="PluginConfig.json" />
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="App.config" />
+      <None Include="packages.config" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
