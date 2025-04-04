@@ -1,4 +1,8 @@
-﻿# DZCP Project
+# DZCP new edition
+https://github.com/dzcp-arabs-fw/DZCP-new-editon
+for work fw in your server
+
+ # DZCP Project
 
 ## Description
 The **DZCP Project** is a custom event management system designed for game environments. It provides a robust framework for handling various in-game events such as round events, server events, team events, and Cassie announcements. The project is built using **.NET 6.0** and follows best practices for modularity and extensibility.
